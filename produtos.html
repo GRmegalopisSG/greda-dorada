@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--
+  Produtos: o que é o pastel de choclo, variedades, comparação de recheios, formatos e preços.
+  O menu, o topo e o rodapé se repetem nas 9 páginas: se mudar um deles, mude em todas.
+  Textos: escritos em português aqui; as versões em inglês e espanhol ficam em js/i18n.js.
+  Cores e estilos: css/style.css. Comportamento (idioma, tema, preços): js/script.js.
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="As três variedades de pastel de choclo da Greda Dourada, formatos e preços.">
+    <meta name="theme-color" content="#284B36">
+    <title>Produtos | Greda Dourada</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fontes do Google: Fraunces (títulos) e Montserrat (textos). Sem internet, o site usa Georgia e Arial -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Aplica o tema salvo (claro/noturno) antes de a página aparecer, para não piscar -->
+    <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+    <!-- Estilos do site -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Topo fixo: faixa verde (aviso, idioma e tema) + cabeçalho com o menu -->
+    <div class="top">
+      <!-- Faixa verde: aviso do projeto simulado e botões de idioma e tema -->
+      <div class="topbar">
+        <span>Projeto simulado do Projeto COIL (Duoc UC × Brasil). Preços e canais são fictícios.</span>
+        <div class="tools">
+          <!--
+            Botões de idioma. Cada botão tem data-lang (pt, en ou es); a troca é
+            feita em js/script.js
+          -->
+          <div class="lang" role="group" aria-label="Idioma">
+            <button data-lang="pt">PT</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="es">ES</button>
+          </div>
+
+          <!-- Botão do modo noturno (lua/sol). O ícone que aparece é escolhido pelo CSS -->
+          <button class="theme" aria-label="Modo noturno" title="Modo noturno">
+            <svg class="i-moon" viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+            </svg>
+            <svg class="i-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cabeçalho: logo e menu de navegação -->
+      <header class="header">
+        <div class="wrap header-in">
+          <a href="index.html" class="brand">
+            <img src="img/logo.png" alt="Greda Dourada" width="56" height="56">
+            <span>Greda Dourada</span>
+          </a>
+          <button class="burger" aria-label="Abrir menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!--
+            Menu principal. A página atual leva aria-current="page" (o CSS
+            destaca). Ao criar uma página nova, adicione o link aqui em TODAS as
+            páginas
+          -->
+          <nav class="nav" id="nav">
+            <a href="produtos.html" aria-current="page">Produtos</a>
+            <a href="embalagem.html">Embalagem</a>
+            <a href="preparo.html">Como preparar</a>
+            <a href="sobre.html">Quem somos</a>
+            <a href="promocoes.html">Promoções</a>
+            <a href="pomaire.html">Pomaire</a>
+            <a href="comprar.html">Onde comprar</a>
+            <a href="brasil.html">Brasil</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+      <!-- Banner de abertura: título, resumo e foto em arco -->
+      <section class="phero">
+        <div class="wrap hero-in">
+          <div class="hero-text">
+            <p class="kicker">
+              <a href="index.html">Início</a>
+              <span>/</span>
+              <span>Produtos</span>
+            </p>
+            <h1>Três variedades, uma cobertura dourada</h1>
+            <p class="lead">
+              Tradicional da Casa, Puro Bovino e Da Horta: o mesmo choclo dourado por
+              cima, três recheios por baixo.
+            </p>
+          </div>
+          <div class="hero-img">
+            <img src="img/hero.jpg" alt="Três pailas com pastel de choclo">
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: O que é o pastel de choclo -->
+      <section class="sec">
+        <div class="wrap">
+          <div class="split">
+            <div>
+              <h2>O que é o pastel de choclo</h2>
+              <p>
+                Choclo é o milho fresco chileno. No pastel de choclo, ele é moído e
+                misturado com manjericão para formar a massa dourada que cobre o
+                recheio e vai ao forno até dourar.
+              </p>
+              <p>
+                O recheio clássico leva carne com cebola, ovo cozido e azeitonas. É
+                um prato da cozinha camponesa chilena, tradicionalmente preparado no
+                verão, temporada do choclo.
+              </p>
+              <p>
+                A Greda Dourada mantém essa receita e a oferece em três variedades,
+                todas refrigeradas e prontas para aquecer.
+              </p>
+            </div>
+            <img class="round" src="img/plato.jpg" alt="Pastel de choclo servido no prato" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: As três variedades (fundo bege mais escuro) -->
+      <section class="sec sec-cream2">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>As três variedades</h2>
+            <p>
+              Mesma cobertura dourada, recheios diferentes. Cada variedade tem uma cor
+              de destaque no rótulo: dourado, terracota e verde.
+            </p>
+          </div>
+
+          <!--
+            Alternador de formato (individual / familiar). O JavaScript troca os
+            preços dos cartões
+          -->
+          <div class="toggle" role="group" aria-label="Formato">
+            <button class="on" data-fmt="ind">Individual · 450 g</button>
+            <button data-fmt="fam">Familiar · 1.800 g</button>
+          </div>
+
+          <!--
+            Cartões das variedades. data-ind e data-fam são os preços em pesos
+            chilenos (CLP); o valor em R$ é calculado em js/script.js
+          -->
+          <div class="cards">
+            <article class="card c-gold" data-ind="7990" data-fam="29990">
+              <div class="card-photo card-photo-tradicional">
+                <img src="img/tradicional.jpg" alt="Tradicional da Casa" loading="lazy">
+              </div>
+              <div class="card-b">
+                <h3>Tradicional da Casa</h3>
+                <p>Carne bovina, frango desossado, ovo cozido, azeitonas pretas e passas.</p>
+                <p class="price"><strong data-clp></strong><small data-brl></small></p>
+                <p class="meta" data-meta></p>
+              </div>
+            </article>
+            <article class="card c-terra" data-ind="8490" data-fam="31990">
+              <img src="img/bovino.jpg" alt="Puro Bovino" loading="lazy">
+              <div class="card-b">
+                <h3>Puro Bovino</h3>
+                <p>Carne bovina, ovo cozido e azeitonas pretas. Sem frango nem passas.</p>
+                <p class="price"><strong data-clp></strong><small data-brl></small></p>
+                <p class="meta" data-meta></p>
+              </div>
+            </article>
+            <article class="card c-green" data-ind="7490" data-fam="28990">
+              <div class="card-photo card-photo-horta">
+                <img src="img/horta.jpg" alt="Da Horta" loading="lazy">
+              </div>
+              <div class="card-b">
+                <h3>Da Horta</h3>
+                <p>Cogumelos, berinjela, pimentão e cebola. Vegetariana, sem carne.</p>
+                <p class="price"><strong data-clp></strong><small data-brl></small></p>
+                <p class="meta" data-meta></p>
+              </div>
+            </article>
+          </div>
+          <p class="note">
+            Preços simulados em CLP, com recipiente retornável. Valor em R$ referencial:
+            1 BRL = 185,29 CLP (28/09/2026).
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção: Compare os recheios -->
+      <section class="sec">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Compare os recheios</h2>
+          </div>
+
+          <!-- Tabela (rola na horizontal em telas pequenas) -->
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ingrediente</th>
+                  <th>Tradicional da Casa</th>
+                  <th>Puro Bovino</th>
+                  <th>Da Horta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Massa de choclo e manjericão</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                </tr>
+                <tr>
+                  <td>Cebola</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                </tr>
+                <tr>
+                  <td>Carne bovina</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                  <td>Não</td>
+                </tr>
+                <tr>
+                  <td>Frango desossado</td>
+                  <td>Sim</td>
+                  <td>Não</td>
+                  <td>Não</td>
+                </tr>
+                <tr>
+                  <td>Ovo cozido</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                  <td>Não</td>
+                </tr>
+                <tr>
+                  <td>Azeitonas pretas</td>
+                  <td>Sim</td>
+                  <td>Sim</td>
+                  <td>Não</td>
+                </tr>
+                <tr>
+                  <td>Passas</td>
+                  <td>Sim</td>
+                  <td>Não</td>
+                  <td>Não</td>
+                </tr>
+                <tr>
+                  <td>Cogumelos, berinjela e pimentão</td>
+                  <td>Não</td>
+                  <td>Não</td>
+                  <td>Sim</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">Baseado nos rótulos do projeto. A variedade Da Horta é vegetariana, sem carne.</p>
+        </div>
+      </section>
+
+      <!-- Seção: Dois formatos, prontos para aquecer (fundo verde) -->
+      <section class="sec sec-green">
+        <div class="wrap">
+          <div class="split">
+            <div>
+              <h2>Dois formatos, prontos para aquecer</h2>
+              <p>
+                <b>Individual · 450 g.</b> Uma porção, servida na paila de barro
+                própria para uso culinário. Cabe no forno e vai direto à mesa.
+              </p>
+              <p>
+                <b>Familiar · 1.800 g.</b> Quatro porções de 450 g, em travessa de
+                vidro própria para forno ou metálica.
+              </p>
+              <p>
+                Todos os pedidos chegam refrigerados, entre 0 e 4 °C, com
+                recipientes retornáveis. A vida útil-alvo é de 72 horas, uma meta
+                acadêmica a validar.
+              </p>
+            </div>
+            <img class="round" src="img/familiar.jpg" alt="Formato familiar em travessa de vidro" loading="lazy">
+          </div>
+
+          <!-- Faixa de chamada com botão para outra página -->
+          <div class="cta-band">
+            <div>
+              <h3>Veja como é a embalagem de cada formato.</h3>
+            </div>
+            <a href="embalagem.html" class="btn btn-gold">Ver embalagem</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: Preços de referência -->
+      <section class="sec">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Preços de referência</h2>
+            <p>Todos os valores são simulados, em pesos chilenos (CLP), com o equivalente em reais.</p>
+          </div>
+
+          <!-- Tabela (rola na horizontal em telas pequenas) -->
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Variedade</th>
+                  <th>Individual · 450 g</th>
+                  <th>Familiar · 1,8 kg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tradicional da Casa</td>
+                  <td>CLP $7.990 · ≈ R$ 43,12</td>
+                  <td>CLP $29.990 · ≈ R$ 161,85</td>
+                </tr>
+                <tr>
+                  <td>Puro Bovino</td>
+                  <td>CLP $8.490 · ≈ R$ 45,82</td>
+                  <td>CLP $31.990 · ≈ R$ 172,65</td>
+                </tr>
+                <tr>
+                  <td>Da Horta</td>
+                  <td>CLP $7.490 · ≈ R$ 40,42</td>
+                  <td>CLP $28.990 · ≈ R$ 156,46</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">
+            Câmbio de referência: 1 BRL = 185,29 CLP (28/09/2026). Os valores consideram
+            o recipiente retornável.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé: marca, links e dados do projeto -->
+    <footer class="footer">
+      <div class="wrap foot-in">
+        <div class="foot-brand">
+          <img src="img/logo.png" alt="" width="84" height="84">
+          <div>
+            <h3>Greda Dourada</h3>
+            <p>O sabor de nossas raízes, sempre por perto.</p>
+          </div>
+        </div>
+        <div>
+          <h4>Navegue</h4>
+          <a href="produtos.html">Produtos</a>
+          <a href="embalagem.html">Embalagem</a>
+          <a href="preparo.html">Como preparar</a>
+          <a href="sobre.html">Quem somos</a>
+        </div>
+        <div>
+          <h4>Mais</h4>
+          <a href="promocoes.html">Promoções</a>
+          <a href="pomaire.html">Pomaire</a>
+          <a href="comprar.html">Onde comprar</a>
+          <a href="brasil.html">Brasil</a>
+        </div>
+        <div>
+          <h4>Projeto</h4>
+          <p>Projeto COIL · Duoc UC × Brasil<br>Proposta de marca e comercialização<br>Setembro de 2026</p>
+        </div>
+      </div>
+
+      <!-- Aviso de projeto acadêmico simulado -->
+      <p class="legal">
+        Projeto acadêmico simulado. Marca, preços, endereço e canais são fictícios e não
+        representam venda real. Site desenvolvido pela equipe do Brasil.
+      </p>
+    </footer>
+
+    <!-- Scripts: primeiro as traduções (i18n.js), depois a lógica do site (script.js). Mantenha esta ordem -->
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
