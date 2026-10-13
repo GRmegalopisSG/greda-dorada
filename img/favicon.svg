@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Greda Dorada">
+  <rect width="32" height="32" rx="7" fill="#284B36"/>
+  <path fill="#B65D43" d="M6 17.2h20c-.6 6.8-4.2 10.6-10 10.6S6.6 24 6 17.2z"/>
+  <rect x="5" y="15.4" width="22" height="2.8" rx="1.4" fill="#F7F0E3"/>
+  <path fill="#D6A62D" d="M8.2 16.2C8.6 9.4 23.4 9.4 23.8 16.2H8.2z"/>
+  <path d="M16 10.6v4.4" stroke="#284B36" stroke-width="1.15" stroke-linecap="round"/>
+  <path d="M12.7 11.6v3.4" stroke="#F7F0E3" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+  <path d="M19.3 11.6v3.4" stroke="#F7F0E3" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+</svg>
